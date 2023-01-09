@@ -1,0 +1,73 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
+
+html {
+    height: 100%;
+}
+
+/* Font Styling */
+body {
+    font-family: "Raleway", sans-serif;
+    color: black;
+    font-size: 1rem;
+    background: white;
+    letter-spacing: 2px;
+}
+
+h1, h2, h3, h4 {
+    font-family: "Raleway", sans-serif;
+    font-weight: 900;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+/* Link & Button Styling */
+button {
+    border: none;
+    /* To prevent zoom when tapping quantity buttons on Safari */
+    touch-action: manipulation;
+}
+
+ul {
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+/* Navbar Styling */
+header {
+    font-size: 1.25rem;
+    background-color: white;
+    box-shadow: 0 4px 8px -2px #e692a0;
+}
+
+header > h1 {
+    font-size: 4rem;
+    text-shadow: 0 4px 16px #e692a0;
+}
+
+/* Gallery Styling */
+.thumbs {
+    max-width: 160px;
+    margin-bottom: 2em;
+}
+
+.image-card {
+    box-shadow: 0 2px 2px 0 whitesmoke;
+}
+
+.image-title {
+    font-size: 1.5rem;
+    font-weight: 900;
+}
+
+.pics {
+    max-height: 90vh;
+    width: auto;
+}

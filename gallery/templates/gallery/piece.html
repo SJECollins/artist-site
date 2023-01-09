@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+{{ piece }}
+{% endblock %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-12 col-lg-8">
+        <figure class="pics">
+            <img width="800" height="600" src="{{ piece.get_image }}" alt="{{ piece }}">
+        </figure>
+    </div>
+    <div class="col-12 col-lg-4">
+        <h2 class="text-center image-title">{{ piece }}</h2>
+        <p>{{ piece.description }}</p>
+        <table class="table table-sm">
+            <tbody>
+                {% if piece.collection %}
+                <tr>
+                    <th>
+                        Collection:
+                    </th>
+                    <td>
+                        {{ piece.collection }}
+                    </td>
+                </tr>
+                {% endif %}
+                {% if piece.date %}
+                <tr>
+                    <th>
+                        Date:
+                    </th>
+                    <td>
+                        {{ piece.date }}
+                    </td>
+                </tr>
+                {% endif %}
+                {% if piece.size %}
+                <tr>
+                    <th>
+                        Size:
+                    </th>
+                    <td>
+                        {{ piece.size }}
+                    </td>
+                </tr>
+                {% endif %}
+
+                {% if piece.price %}
+                <tr>
+                    <th>
+                        Price:
+                    </th>
+                    <td>
+                        {{ piece.price }}
+                    </td>
+                </tr>
+                {% endif %}
+            </tbody>
+        </table>
+        <ul>
+            <li>
+                <a href="">View</a>
+            </li>
+            <li>
+                <a href="">Enquire</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+{% endblock %}
