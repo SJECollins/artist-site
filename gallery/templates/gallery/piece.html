@@ -9,8 +9,8 @@
 
 <div class="row">
     <div class="col-12 col-lg-8">
-        <figure class="pics">
-            <img width="800" height="600" src="{{ piece.get_image }}" alt="{{ piece }}">
+        <figure>
+            <img width="800" height="600" class="pics img-fluid" src="{{ piece.get_image }}" alt="{{ piece }}">
         </figure>
     </div>
     <div class="col-12 col-lg-4">
@@ -24,7 +24,9 @@
                         Collection:
                     </th>
                     <td>
-                        {{ piece.collection }}
+                        <a href="{% url 'gallery:collection' slug=piece.collection.slug %}" aria-label="Link to {{ piece.collection }}">
+                            {{ piece.collection }}
+                        </a>
                     </td>
                 </tr>
                 {% endif %}
@@ -48,14 +50,22 @@
                     </td>
                 </tr>
                 {% endif %}
-
                 {% if piece.price %}
                 <tr>
                     <th>
                         Price:
                     </th>
                     <td>
-                        {{ piece.price }}
+                        €{{ piece.price }}
+                    </td>
+                </tr>
+                {% else %}
+                <tr>
+                    <th>
+                        Price:
+                    </th>
+                    <td>
+                        Available on request.
                     </td>
                 </tr>
                 {% endif %}
@@ -63,13 +73,15 @@
         </table>
         <ul>
             <li>
-                <a href="">View</a>
-            </li>
-            <li>
-                <a href="">Enquire</a>
+                <button class="art-btn" data-hx-get="{% url 'gallery:enquiry' slug=piece.slug %}"
+                data-hx-target="#modal-dialog" aria-label="Enquire about piece">Enquire</button>
             </li>
         </ul>
     </div>
 </div>
 
+{% endblock %}
+
+{% block additional_script %}
+<script src="{% static 'js/script.js' %}"></script>
 {% endblock %}

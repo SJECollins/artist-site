@@ -9,9 +9,9 @@
 
 
 <div>
-   <h2 class="text-center">{{ collection }}</h2>
+   <h2 class="gallery-title text-center">{{ collection }}</h2>
    <div class="col-md-6 mx-auto">
-        <p>
+        <p class="text-center">
             {{ collection.description }}
         </p>
         <p class="text-center">
@@ -26,19 +26,9 @@
             {% endif %}
         </p>
    </div>
-   <div class="text-center">
+   <div class="text-center mb-5">
         <a href="{% url 'gallery:gallery' %}" aria-label="Link to all work">Return to Work</a>
    </div>
-</div>
-
-<div id="workCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
-    <div class="carousel-inner">
-        {% for piece in pieces %}
-        <div class="carousel-item active" data-bs-interval="5000">
-            <img src="{{ piece.get_image }}" class="d-block w-100" alt="{{ piece }}">
-        </div>
-        {% endfor %}
-    </div>
 </div>
 
 <div>
@@ -47,13 +37,11 @@
         <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 text-center">
             <div class="h-100 border-0 image-card">
                 <div class="my-3">
-                    {% if piece.thumbnail %}
                     <a href="{% url 'gallery:piece' slug=piece.slug %}">
-                        <figure class="thumbs">
-                            <img width="160" height="160" src="{{ piece.get_thumbnail }}" alt="{{ piece }}">
+                        <figure>
+                            <img width="200" height="200" class="thumbs" src="{{ piece.get_thumbnail }}" alt="{{ piece }}">
                         </figure>
                     </a>
-                    {% endif %}
                 </div>
                 <div>
                     <div class="row">
@@ -63,6 +51,11 @@
                                 {{ piece }}
                                 </a>
                             </h4>
+                            <p class="text-center">
+                                <a href="{% url 'gallery:piece' slug=piece.slug %}">
+                                    View
+                                </a>
+                            </p>
                         </div>
                     </div>
                 </div>

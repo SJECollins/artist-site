@@ -1,3 +1,4 @@
+from datetime import date
 from django.db import models
 
 
@@ -13,3 +14,12 @@ class Event(models.Model):
 
     def __str__(self):
         return self.event_name
+
+    def get_upcoming(self):
+        return self.date_start > date.today()
+
+    def has_passed(self):
+        if self.date_end:
+            return self.date_end < date.today()
+        else:
+            return self.date_start < date.today()

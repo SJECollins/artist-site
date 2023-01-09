@@ -9,19 +9,19 @@ Home
 
 <div id="workCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
     <div class="carousel-inner">
-        <div class="carousel-item active" data-bs-interval="5000">
-            <img src="..." class="d-block w-100" alt="...">
+        <div class="carousel-item active">
+            <img src="{% static 'images/bridge1.webp' %}" class="d-block w-100" alt="...">
         </div>
-        <div class="carousel-item" data-bs-interval="5000">
-            <img src="..." class="d-block w-100" alt="...">
+        <div class="carousel-item">
+            <img src="{% static 'images/bridge2.webp' %}" class="d-block w-100" alt="...">
         </div>
-        <div class="carousel-item" data-bs-interval="5000">
-            <img src="..." class="d-block w-100" alt="...">
+        <div class="carousel-item">
+            <img src="{% static 'images/industry.webp' %}" class="d-block w-100" alt="...">
         </div>
     </div>
 </div>
 <div>
-    <h2>
+    <h2 class="text-center">
         <a href="{% url 'gallery:gallery' %}" aria-label="Links to gallery page">
             View Work
         </a>

@@ -4,6 +4,10 @@ html {
     height: 100%;
 }
 
+section {
+    max-width: 2550px;
+}
+
 /* Font Styling */
 body {
     font-family: "Raleway", sans-serif;
@@ -18,6 +22,10 @@ h1, h2, h3, h4 {
     font-weight: 900;
     margin-top: 0.5em;
     margin-bottom: 0.5em;
+}
+
+p {
+    text-align: justify;
 }
 
 /* Link & Button Styling */
@@ -40,6 +48,27 @@ a {
     color: black;
 }
 
+a:hover {
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey;
+    color: grey;
+}
+
+.art-btn {
+    padding: 0.25em 0.75em;
+    font-weight: 700;
+    color: white;
+    background-color: black;
+    border-radius: 2px;
+    transition: all 0.2s linear;
+}
+
+.art-btn:hover, .art-btn:active {
+    color: white;
+    font-weight: 900;
+    background-color: grey;
+}
+
 /* Navbar Styling */
 header {
     font-size: 1.25rem;
@@ -52,10 +81,32 @@ header > h1 {
     text-shadow: 0 4px 16px #e692a0;
 }
 
+/* Index Styling */
+#workCarousel img {
+    max-height: 90vh;
+    width: auto;
+    object-fit: contain;
+}
+
+.carousel-item {
+    transition: transform 5s ease-in-out;
+}
+
+.carousel-fade .active.carousel-item-start,
+.carousel-fade .active.carousel-item-end {
+    transition: opacity 5s;
+  }
+
 /* Gallery Styling */
+.gallery-title {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
 .thumbs {
-    max-width: 160px;
+    max-width: 200px;
     margin-bottom: 2em;
+    object-fit: contain;
 }
 
 .image-card {
@@ -68,6 +119,56 @@ header > h1 {
 }
 
 .pics {
+    object-fit: contain;
     max-height: 90vh;
     width: auto;
+    display: block;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+/* Events Styling */
+.events-title {
+    font-size: 2rem;
+}
+
+/* Lightbox */
+
+#lightbox {
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: none;
+}
+
+#lightbox.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#lightbox > img {
+    max-height: 95vh;
+    width: auto;
+}
+
+/* Footer Styling */
+footer {
+    box-shadow: 0 -4px 8px -2px #e692a0;
+}
+
+.footer-socials {
+    height: 5rem;
+    line-height: 5rem;
+}
+
+/* Media Queries */
+
+@media (max-width: 1000px) {
+    #lightbox, #lightbox.active {
+        display: none;
+    }
 }

@@ -1,3 +1,7 @@
+from io import BytesIO
+from PIL import Image
+
+from django.core.files import File
 from django.db import models
 
 
@@ -21,9 +25,9 @@ class Piece(models.Model):
     piece_name = models.CharField(max_length=280)
     slug = models.CharField(max_length=140)
     size = models.CharField(max_length=140, null=True, blank=True)
-    price = models.models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
+    price = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
     image = models.ImageField(upload_to='uploads/', null=True, blank=True)
-    thumbnail = models.ImageField(upload_to='uploads/', null=True, blank=True)
+    thumbnail = models.ImageField(upload_to='uploads/thumbs/', null=True, blank=True)
     date = models.DateField(null=True, blank=True)
     date_added = models.DateTimeField(auto_now_add=True)
     description = models.TextField()
