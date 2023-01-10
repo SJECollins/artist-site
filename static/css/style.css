@@ -86,6 +86,10 @@ header {
 }
 
 /* Index Styling */
+.keep-space {
+    min-height: 90vh;
+}
+
 #workCarousel img {
     max-height: 90vh;
     width: auto;

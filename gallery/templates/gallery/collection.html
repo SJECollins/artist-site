@@ -12,22 +12,20 @@
    <h2 class="gallery-title text-center mb-2">{{ collection }}</h2>
    <div class="col-md-8 col-lg-6 mx-auto">
         <h5 class="text-center">
-            {% if collection.year %} {{ collection.year }} {% endif %}
-            {% if collection.start_date %} {{ collection.date_start|date:"Y" }} - {{ collection.date_end|date:"Y" }} {% endif %}
         </h5>
-        <p class="text-center mb-5">
-            {{ collection.description }}
-        </p>
         <p class="text-center">
-            {% if year %}
+            {% if collection.year %}
                 {{ collection.year }}
             {% endif %}
             {% if collection.date_start %}
-                {{ collection.date_start }}
+                {{ collection.date_start|date:'Y' }}
             {% endif %}
             {% if collection.date_end %}
-                - {{ collection.date_end }}
+                - {{ collection.date_end|date:'Y' }}
             {% endif %}
+        </p>
+        <p class="text-center mb-5">
+            {{ collection.description }}
         </p>
    </div>
    <div class="text-center mb-5">

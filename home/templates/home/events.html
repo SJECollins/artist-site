@@ -87,7 +87,7 @@ Events
                     {% else %}
                     <hr>
                     <h2>Passed</h2>
-                        {% for event in events.list %}
+                        {% for event in passed_events.list %}
                         <div class="image-card">
                             <h3 class="image-title">{{ event }}</h3>
                             <p>{{ event.description|linebreaks }}</p>
