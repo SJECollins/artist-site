@@ -17,11 +17,11 @@ Events
                 {% for event in upcoming_events.list %}
                 <div class="image-card">
                     <h3 class="image-title">{{ event }}</h3>
-                    <p>{{ event.description }}</p>
+                    <p>{{ event.description|linebreaks }}</p>
                     <table class="table table-sm">
                         <tbody>
                             <tr>
-                                <th>Date: </th>
+                                <th>Start: </th>
                                 <td>{{ event.date_start|date:"d M Y" }}</td>
                             </tr>
                             {% if event.date_end %}
@@ -55,16 +55,16 @@ Events
                     {% for event in passed_events.list %}
                     <div class="image-card">
                         <h3 class="image-title">{{ event }}</h3>
-                        <p>{{ event.description }}</p>
+                        <p>{{ event.description|linebreaks }}</p>
                         <table class="table table-sm">
                             <tbody>
                                 <tr>
-                                    <th>Date: </th>
+                                    <th>Start: </th>
                                     <td>{{ event.date_start|date:"d M Y" }}</td>
                                 </tr>
                                 {% if event.date_end %}
                                 <tr>
-                                    <th>Through: </th>
+                                    <th>Runs until: </th>
                                     <td>{{ event.date_end|date:"d M Y" }}</td>
                                 </tr>
                                 {% endif %}
@@ -90,7 +90,7 @@ Events
                         {% for event in events.list %}
                         <div class="image-card">
                             <h3 class="image-title">{{ event }}</h3>
-                            <p>{{ event.description }}</p>
+                            <p>{{ event.description|linebreaks }}</p>
                             <table class="table table-sm">
                                 <tbody>
                                     <tr>
@@ -99,7 +99,7 @@ Events
                                     </tr>
                                     {% if event.date_end %}
                                     <tr>
-                                        <th>Through: </th>
+                                        <th>Ended: </th>
                                         <td>{{ event.date_end|date:"d M Y" }}</td>
                                     </tr>
                                     {% endif %}

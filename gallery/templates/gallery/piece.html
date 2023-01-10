@@ -15,7 +15,7 @@
     </div>
     <div class="col-12 col-lg-4">
         <h2 class="text-center image-title">{{ piece }}</h2>
-        <p>{{ piece.description }}</p>
+        <p>{{ piece.description|linebreaks }}</p>
         <table class="table table-sm">
             <tbody>
                 {% if piece.collection %}
@@ -37,6 +37,23 @@
                     </th>
                     <td>
                         {{ piece.date }}
+                    </td>
+                </tr>
+                {% elif piece.collection.year or piece.collection.date_start %}
+                <tr>
+                    <th>
+                        Date:
+                    </th>
+                    <td>
+                        {% if piece.collection.year %}
+                            {{ piece.collection.year }}
+                        {% endif %}
+                        {% if piece.collection.date_start %}
+                            {{ piece.collection.date_start }}
+                        {% endif %}
+                        {% if piece.collection.date_end %}
+                            - {{ piece.collection.date_end }}
+                        {% endif %}
                     </td>
                 </tr>
                 {% endif %}
