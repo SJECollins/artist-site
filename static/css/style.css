@@ -131,6 +131,10 @@ header {
     cursor: pointer;
 }
 
+.thumbs:hover, .thumbs:active {
+    border: none;
+}
+
 /* Events Styling */
 .events-title {
     font-size: 2rem;

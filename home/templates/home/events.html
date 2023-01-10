@@ -8,10 +8,11 @@ Events
 {% block content %}
 <h1 class="gallery-title text-center">Events</h1>
 
-<div class="col col-sm-8 col-md-6 col-lg-4 mx-auto">
+<div class="col col-sm-8 col-lg-6 col-xl-5 mx-auto">
     {% regroup events by get_upcoming as upcoming %}
         {% for upcoming_events in upcoming %}
             {% if upcoming_events.grouper == True %}
+            <hr>
             <h2>Upcoming</h2>
                 {% for event in upcoming_events.list %}
                 <div class="image-card">
@@ -45,11 +46,11 @@ Events
                     </table>
                 </div>
                 {% endfor %}
-                <hr>
             {% else %}
             {% regroup events by has_passed as passed %}
                 {% for passed_events in passed %}
                     {% if passed_events.grouper == False %}
+                    <hr>
                     <h2>Currently Running</h2>
                     {% for event in passed_events.list %}
                     <div class="image-card">
@@ -83,8 +84,8 @@ Events
                         </table>
                     </div>
                     {% endfor %}
-                    <hr>
                     {% else %}
+                    <hr>
                     <h2>Passed</h2>
                         {% for event in events.list %}
                         <div class="image-card">
