@@ -76,9 +76,13 @@ header {
     box-shadow: 0 4px 8px -2px #e692a0;
 }
 
-header > h1 {
+.header-title {
     font-size: 4rem;
     text-shadow: 0 4px 16px #e692a0;
+}
+
+.header-title:hover, .header-title:active {
+    color: black;
 }
 
 /* Index Styling */
@@ -162,7 +166,6 @@ footer {
 
 .footer-socials {
     height: 5rem;
-    line-height: 5rem;
 }
 
 /* Media Queries */

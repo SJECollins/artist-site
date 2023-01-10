@@ -8,6 +8,8 @@ class Event(models.Model):
     date_end = models.DateField(null=True, blank=True)
     location = models.CharField(max_length=280)
     description = models.TextField()
+    website = models.CharField(max_length=280, null=True, blank=True)
+    website_name = models.CharField(max_length=280, null=True, blank=True)
 
     class Meta:
         ordering = ('-date_start',)

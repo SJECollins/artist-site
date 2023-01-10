@@ -33,10 +33,19 @@ Events
                                 <th>Location: </th>
                                 <td>{{ event.location }}</td>
                             </tr>
+                            {% if event.website %}
+                            <tr>
+                                <th>Website: </th>
+                                <td>
+                                    <a href="{{ event.website }}" target="_blank" rel="noopener" alt="Link to {{ event.website_name }}">{{ event.website_name }}</a>
+                                </td>
+                            </tr>
+                            {% endif %}
                         </tbody>
                     </table>
                 </div>
                 {% endfor %}
+                <hr>
             {% else %}
             {% regroup events by has_passed as passed %}
                 {% for passed_events in passed %}
@@ -62,10 +71,19 @@ Events
                                     <th>Location: </th>
                                     <td>{{ event.location }}</td>
                                 </tr>
+                                {% if event.website %}
+                                <tr>
+                                    <th>Website: </th>
+                                    <td>
+                                        <a href="{{ event.website }}" target="_blank" rel="noopener" alt="Link to {{ event.website_name }}">{{ event.website_name }}</a>
+                                    </td>
+                                </tr>
+                                {% endif %}
                             </tbody>
                         </table>
                     </div>
                     {% endfor %}
+                    <hr>
                     {% else %}
                     <h2>Passed</h2>
                         {% for event in events.list %}
@@ -88,6 +106,14 @@ Events
                                         <th>Location: </th>
                                         <td>{{ event.location }}</td>
                                     </tr>
+                                    {% if event.website %}
+                                    <tr>
+                                        <th>Website: </th>
+                                        <td>
+                                            <a href="{{ event.website }}" target="_blank" rel="noopener" alt="Link to {{ event.website_name }}">{{ event.website_name }}</a>
+                                        </td>
+                                    </tr>
+                                    {% endif %}
                                 </tbody>
                             </table>
                         </div>
